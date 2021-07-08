@@ -15,7 +15,7 @@ let listPlayers = [];
 
 const playersNamesInput = function (nbrPlayers) {
   for (let i = 0; i < nbrPlayers; i++) {
-    listPlayers[i] = prompt(`What's the name of Player ${i + 1}?`);
+    listPlayers[i] = prompt(`Qual o nome do jogador ${i + 1}?`);
   }
   return listPlayers;
 };
@@ -131,14 +131,14 @@ btnHold.addEventListener("click", function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     // 2. check if the active player's score is < 100
-    if (scores[activePlayer] < 100) {
+    if (scores[activePlayer] < 20) {
       playerSwitch();
     } else {
       playing = false;
       diceEl.classList.add("hidden");
       playerName[
         activePlayer
-      ].textContent = `${playerName[activePlayer].textContent} WINS!`;
+      ].textContent = `${playerName[activePlayer].textContent} VENCEU!`;
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add("player--winner");
